@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}About{% endblock %}
+
+{% block body_block %}
+<UL class="nav nav-list">
+        <li class="nav-header">Category List</li>
+        {% if cat_list %}
+                {% for cat in cat_list %}
+                        <LI><A HREF="/rango/cat/{{ cat.url }}">{{ cat.name }}</A></LI>
+                {% endfor %}
+        {% else %}
+                <LI>No categories at present.</LI>
+        {% endif %}
+        <LI><A HREF="/rango/cat_add"> Add category</A></LI>
+</UL>
+{% endblock %}
